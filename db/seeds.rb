@@ -14,3 +14,14 @@ puts 'Deleting current Bikes'
 end
 Bike.destroy_all
 puts 'Bikes destroyed'
+
+10.times do
+  user = User.find(rand(1..3))
+  name = "#{Faker::Color.color_name} #{Faker::Creature::Animal.name}"
+  description = "This bike is faster than a really fast #{Faker::Vehicle.make} driven by #{Faker::Games::SuperMario.character}"
+  location = Faker::Address.city
+  price = rand(10..100)
+  Bike.create(user: user, name: name, description: description, location: location, price: price)
+end
+
+puts "Bikes seeded"
