@@ -1,1 +1,16 @@
-<h1>Bike</h1>
+<div class="container pt-3">
+  <%= image_tag("bike.jpg", style: 'display: block; margin: auto; width:100%;') %>
+  <h1 class="py-4"><%= @bike.name %></h1>
+  <p><%= @bike.description %></p>
+
+  <div class="border">
+  <h2>Book this bike</h2>
+  <%= simple_form_for(@bike) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <div class="form-action">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+  </div>
+</div>
