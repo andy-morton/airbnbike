@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Deleting current Bikes'
+5.times do
+  print('.')
+  sleep(0.2)
+end
+Bike.destroy_all
+puts 'Bikes destroyed'
