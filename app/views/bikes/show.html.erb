@@ -3,14 +3,13 @@
   <h1 class="py-4"><%= @bike.name %></h1>
   <p><%= @bike.description %></p>
 
-  <div class="border">
-  <h2>Book this bike</h2>
-  <%= simple_form_for(@bike) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <div class="form-action">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="border">
+      <h2>Book this bike</h2>
+        <%= simple_form_for [ @bike, @booking ] do |f| %>
+        <%= f.input :start_date, as: :date %>
+        <%= f.input :end_date, as: :date %>
+        <%= f.button :submit %>
+        <% end %>
+    </div>
   </div>
 </div>
