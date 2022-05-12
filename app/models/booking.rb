@@ -2,8 +2,7 @@ require 'pry'
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :bike
-  validates :price, :start_date, :end_date, presence: true
-  validates :start_date, :end_date, type: Date
+  validates  :start_date, :end_date, presence: true
   validate :start_date_cannot_be_in_the_past
   validate :start_date_cannot_be_after_end_date
   validates :start_date, uniqueness: { scope: :bike_id,
