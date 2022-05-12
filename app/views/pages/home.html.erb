@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://giant-image-resizer-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload/showcases/2017/liv-bikes/Banner_LangmaAdvancedSLShowcase.jpg);">
+  <div class="container">
+    <h1>AIRBNBIKE </h1>
+    <p>Find Bikes to rent wherever you are.</p>
+    <%= link_to "Discover Bikes", bikes_path, class: "btn btn-flat" %>
+  </div>
+  <br><br>
+  <h2>London Bikes</h2>
+  <div class="row">
+    <% @bikes.each do |bike| %>
+      <div class="col-md-4 mb-3">
+        <%= link_to bike_path(bike), class:"text-decoration-none" do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)">
+            <%= bike.name %>
+          </div>
+        <% end%>
+    </div>
+  <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    For the <i class="fas fa-heart"></i> of cycling
+  </div>
+</div>
