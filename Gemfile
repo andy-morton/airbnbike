@@ -68,3 +68,6 @@ gem 'devise'
 
 # adding Faker for Seed
 gem 'faker'
+
+# to hide env
+gem 'dotenv-rails', groups: [:development, :test]

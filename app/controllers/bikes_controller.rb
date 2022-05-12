@@ -2,12 +2,11 @@ class BikesController < ApplicationController
 
 def index
     @bikes = Bike.all
-  end  
-  
+  end
+
 def show
   @bike = Bike.find(params[:id])
   @booking = Booking.new
-  console
 end
 
 private
