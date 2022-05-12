@@ -69,5 +69,6 @@ gem 'devise'
 # adding Faker for Seed
 gem 'faker'
 
-# to hide env
+# to hide env and add cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
