@@ -53,5 +53,4 @@ ActiveRecord::Schema.define(version: 2022_05_07_142539) do
   add_foreign_key "bikes", "users"
   add_foreign_key "bookings", "bikes"
   add_foreign_key "bookings", "users"
-
 end

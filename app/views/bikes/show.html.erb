@@ -1,0 +1,15 @@
+<div class="container pt-3">
+  <%= image_tag("bike.jpg", style: 'display: block; margin: auto; width:100%;') %>
+  <h1 class="py-4"><%= @bike.name %></h1>
+  <p><%= @bike.description %></p>
+
+    <div class="border">
+      <h2>Book this bike</h2>
+        <%= simple_form_for [ @bike, @booking ] do |f| %>
+        <%= f.input :start_date, as: :date %>
+        <%= f.input :end_date, as: :date %>
+        <%= f.button :submit %>
+        <% end %>
+    </div>
+  </div>
+</div>
