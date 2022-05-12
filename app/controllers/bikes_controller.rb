@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+
   def index
     @bikes = Bike.all
   end
@@ -26,4 +27,5 @@ class BikesController < ApplicationController
   def bike_params
     params.require(:bike).permit(:name, :description, :location, :price, :user_id, photos: [])
   end
+
 end
