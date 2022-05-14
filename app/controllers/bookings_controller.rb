@@ -14,6 +14,18 @@ class BookingsController < ApplicationController
     redirect_to bike_path(@bike)
   end
 
+  def show
+      @booking = Booking.find(params[:id])
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    @user = current_user
+
+    redirect_to user_path(@user)
+  end
+
   private
 
   def booking_params
