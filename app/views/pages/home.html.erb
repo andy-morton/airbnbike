@@ -5,7 +5,7 @@
     <%= link_to "Discover Bikes", bikes_path, class: "btn btn-flat" %>
   </div>
   <br><br>
-  <h2>London Bikes</h2>
+  <h2><strong>London Bikes</strong></h2>
   <div class="row">
     <% @bikes.each do |bike| %>
       <div class="col-md-4 mb-3">
@@ -16,16 +16,4 @@
         <% end%>
     </div>
   <% end %>
-</div>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    For the <i class="fas fa-heart"></i> of cycling
-  </div>
 </div>
