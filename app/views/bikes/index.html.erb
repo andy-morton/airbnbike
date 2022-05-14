@@ -1,15 +1,4 @@
 <div class="container">
   <h1>List of bikes:</h1>
-
-  <div class="row">
-    <% @bikes.each do |bike| %>
-      <div class="col-md-4 mb-3">
-        <%= link_to bike_path(bike), class:"text-decoration-none" do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)">
-            <%= bike.name %>
-          </div>
-        <% end%>
-      </div>
-    <% end %>
-    </div>
+  <%= render 'shared/cardgrid', locals: {bikes: @bikes} %>
 </div>
