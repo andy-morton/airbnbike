@@ -1,5 +1,5 @@
 <div class="container pt-3">
-  <%= image_tag("bike.jpg", style: 'display: block; margin: auto; width:100%;') %>
+  <%= render "shared/carousel", locals: {bike: @bike} %>
   <h1 class="py-4"><%= @bike.name %></h1>
   <p><%= @bike.description %></p>
 
