@@ -5,6 +5,8 @@
     <%= link_to "Discover Bikes", bikes_path, class: "btn btn-flat" %>
   </div>
   <br><br>
-  <h2>London Bikes</h2>
-  <%= render 'shared/cardgrid', locals: {bikes: @bikes} %>
 </div>
+  <div class="container">
+    <h2>London Bikes</h2>
+    <%= render 'shared/cardgrid', locals: {bikes: @bikes} %>
+  </div>
