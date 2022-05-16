@@ -5,7 +5,7 @@
     <% @bookings.each do |booking| %>
         <div class="col-md-4 mb-3">
           <% if booking.bike.photos.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bike.photos.first.key, height: 300, crop: :fill %>')">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.bike.photos.first.key, height: 300, crop: :fill %>')">
               <%= booking.bike.name %>
             </div>
           <% else %>
