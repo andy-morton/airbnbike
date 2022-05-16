@@ -5,15 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'nokogiri'
 require 'faker'
 
 puts 'Deleting current Bikes'
 5.times do
   print('.')
-  sleep(0.2)
+  sleep(0.1)
 end
 Bike.destroy_all
 puts 'Bikes destroyed'
+
+puts 'Deleting current Users'
+5.times do
+  print('.')
+  sleep(0.1)
+end
+User.destroy_all
+puts 'Users destroyed'
+
+puts 'Creating users'
+
 
 10.times do
   user = User.find(rand(1..3))
