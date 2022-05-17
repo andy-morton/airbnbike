@@ -43,25 +43,23 @@ puts 'All users seeded'
 url = 'https://www.gumtree.com/bicycles/london'
 
 html_file = URI.open(url).read
-puts '1 no issue'
 html_doc = Nokogiri::HTML(html_file)
-puts '2 no issue'
 puts html_doc.css(".listing-link")[0]['href']
 html_doc.css(".listing-link").take(10).each do |link|
   bike_link = link['href']
   url2 = "https://www.gumtree.com#{bike_link}"
-  puts url2
+  # puts url2
   html_file2 = URI.open(url2).read
-  puts '3 no issue'
+  # puts '3 no issue'
   html_doc2 = Nokogiri::HTML(html_file2)
   title = html_doc2.at("h1").text
-  puts title
+  # puts title
   description = html_doc2.at("[@itemprop = 'description']").text
-  puts description
+  # puts description
   price = html_doc2.at("[@itemprop = 'price']")['content']
-  puts price
+  # puts price
   location = html_doc2.at("[@itemprop = 'addressLocality']").text
-  puts location
+  # puts location
   photo_link = html_doc2.css(".carousel-item").css("img")[0]['src']
   puts photo_link
   user = User.find(user_list.sample)
