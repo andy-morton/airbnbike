@@ -16,3 +16,7 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+window.addEventListener("turbolinks:load", function() {
+  initFlatpickr();
+})
