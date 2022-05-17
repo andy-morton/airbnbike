@@ -66,8 +66,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # add devise
 gem 'devise'
 
-# adding Faker for Seed
+# adding for Seed
 gem 'faker'
+gem 'nokogiri'
 
 # to hide env and add cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
