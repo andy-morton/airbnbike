@@ -1,41 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://media.istockphoto.com/vectors/bicycle-icon-vector-id854733622?k=20&m=854733622&s=170667a&w=0&h=K2TGK2cBUnEq3QJxdN9ChJt641zrXottMKIIyfNHzmY=" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Search", bikes_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My bookings", user_path(current_user), class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "List a bike", new_bike_path, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item dropdown">
-            <%= image_tag "avatar", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "My profile", "#", class: "dropdown-item" %>
-              <%= link_to "My bikes", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+<div class="navbar">
+  <div>
+    <%= link_to "Airbnbike", root_path, class: "logo" %>
   </div>
+
+ <% if user_signed_in? %>
+  <div class="nav__links">
+    <%= link_to "Search", bikes_path, class: "active nav__link" %>
+    <%= link_to "My bookings", user_path(current_user), class: "nav__link" %>
+    <%= link_to "List a bike", new_bike_path, class: "nav__link" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav__link" %>
+  </div>
+<% else %>
+  <li>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  </li>
+<% end %>
+
+<script src="main.js"></script>
 </div>
