@@ -12,7 +12,8 @@
             <div class="card__content">
               <div class="card__header">
                 <div class="card__title"><%= bike.name %></div>
-                <div class="card__location"><%= bike.location %></div>
+                <% location = Geocoder.search(bike.location).first.suburb ? Geocoder.search(bike.location).first.suburb : Geocoder.search(bike.location).first.city %>
+                <div class="card__location"><%= location %></div>
               </div>
                 <p class="card__text"><%= bike.description %></p>
               <div class="card__bottom">
