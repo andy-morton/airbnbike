@@ -1,12 +1,67 @@
-.navbar-lewagon {
-  justify-content: space-evenly;
-  background: white;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+body {
+  scroll-behavior: smooth;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  position: fixed;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  z-index: 99999;
+}
+
+.logo {
+  margin: 0 10px;
+  color: #489FB5;
+  padding: 5px 15px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__link {
+  margin: 0 10px;
+  color: white;
+  background-color: #489FB5;
+  padding: 5px 15px;
+  border-radius: 100px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  background-color: #38798a;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section:nth-child(odd) {
+  background-color: rgb(235, 235, 235);
 }
