@@ -2,10 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-4">
         <%= simple_form_for @bike do |f| %>
-          <%= f.input :name %>
+          <%= f.input :name, label: 'Give your bike a name' %>
           <%= f.input :description %>
+          <%= f.input :category, collection: ['Mountain', 'Road', 'Hybrid', 'Vintage', 'Electric'] %>
+          <%= f.input :size, collection: ['Child', 'Small', 'Medium', 'Large', 'X-Large'] %>
           <%= f.input :location %>
-          <%= f.input :price %>
+          <%= f.input :price, collection: 0..100, label: 'Price per day(£)',   as: :float %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <div class="btn btn-primary btn-lg w-100">
             <%= f.button :submit %>
