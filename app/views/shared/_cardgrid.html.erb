@@ -1,6 +1,6 @@
 <ul class="row">
   <% @bikes.each do |bike| %>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <%= link_to bike_path(bike), class:"text-decoration-none" do %>
         <li class="cards__item">
           <div class="card">
@@ -11,11 +11,11 @@
             <% end %>
             <div class="card__content">
               <div class="card__header">
-                <div class="card__title"><%= bike.name %></div>
+                <% title = bike.name.length < 10 ? bike.name : "#{bike.name[0,20]}..."  %>
+                <div class="card__title"><%= title %></div>
                 <% location = Geocoder.search(bike.location).first.suburb ? Geocoder.search(bike.location).first.suburb : Geocoder.search(bike.location).first.city %>
                 <div class="card__location"><%= location %></div>
               </div>
-                <p class="card__text"><%= bike.description %></p>
               <div class="card__bottom">
                 <div class="card__category"><%= bike.category %></div>
                 <div class="card__size"><%= bike.size %></div>
