@@ -22,6 +22,7 @@ body {
   position: fixed;
   background-color: white;
   transition: all 0.5s ease-in-out;
+  z-index: 99999;
 }
 
 .logo {
@@ -50,7 +51,6 @@ body {
   text-decoration: none;
 }
 
-.nav__link.active,
 .nav__link:hover {
   background-color: #38798a;
 }
