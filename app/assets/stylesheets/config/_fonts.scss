@@ -1,11 +1,10 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&family=Poppins:wght@100;200;300;400&display=swap');
 
 
 // Define fonts for body and headers
-$body-font: 'Nunito', sans-serif;
-$headers-font: 'Playfair Display', serif;
+$body-font:'Poppins', sans-serif;
+$headers-font: 'Poppins', sans-serif;
 
 
 // To use a font file (.woff) uncomment following lines

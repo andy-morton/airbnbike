@@ -9,7 +9,7 @@
           <%= f.input :location %>
           <%= f.input :price, collection: 0..100, label: 'Price per day(£)',   as: :float %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <div class="btn btn-primary btn-lg w-100">
+          <div class="d-flex justify-content-center mb-3">
             <%= f.button :submit, class: "btn-flat" %>
           </div>
         <% end %>
