@@ -14,10 +14,12 @@
   </head>
 
   <body>
+    <div class="home-wrapper">
     <%= render 'shared/navbar' %>
     <div class="pt-5"></div>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
