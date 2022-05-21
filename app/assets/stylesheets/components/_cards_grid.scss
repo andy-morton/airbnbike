@@ -63,7 +63,6 @@ body {
   //border-radius: 1rem;
   color: $gray;
   padding: 0.5rem;
-  text-transform: lowercase;
 }
 
 .btn--block {
@@ -133,20 +132,33 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  overflow: visible;
+  overflow: scroll;
   text-overflow: ellipsis;
   word-wrap: break-word;
   line-height: 1em; /* a */
   max-height: 2em; /* a x number of line to show (ex : 2 line)  */
-  padding-top: 12px;
+  margin-top: 24px;
 }
 
-.card__price {
+.cprice {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   flex-direction: column;
-  font-weight: bold
+  font-weight: bold;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.card__tab {
+  margin: 0 10px;
+  color: white;
+  background-color: #489FB5;
+  padding: 5px 15px;
+  border-radius: 100px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  font-size: 0.5em;
 }
 
 .card__image {
@@ -178,9 +190,7 @@ body {
 
 .card__title {
   font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: 400;
   text-overflow: ellipsis;
   overflow: visible;
 }
