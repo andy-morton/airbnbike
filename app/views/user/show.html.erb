@@ -1,49 +1,70 @@
 <div class="container pt-3">
-  <h3>Your Bookings:</h3>
+  <h3 class>Your Bookings:</h3>
   <hr>
     <div class="row">
       <% @bookings.each do |booking| %>
-        <div class="col-md-4 mb-3">
-          <% if booking.bike.photos.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.bike.photos.first.key, height: 300, crop: :fill %>')">
-              <%= booking.bike.name %>
-            </div>
-        </div>
-          <% else %>
-          <div class="col-md-4 mb-3">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)">
-              <%= booking.bike.name %>
-            </div>
-          <% end %>
-              <p><%= "Number of days: #{((booking.end_date - booking.start_date).to_i)+1}" %></p>
-              <p><%= "Price: #{booking.bike.price * (((booking.end_date - booking.start_date).to_i)+1) }" %></p>
-              <%= link_to "Delete #{booking.bike.name}",
-              booking_path(booking),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-          <% end %>
-        </div>
+         <div class="col-md-4 mb-3">
+           <% if booking.bike.photos.attached? %>
+                <div class="card-product">
+                  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+                              rgba(0,0,0,0.3)),
+                              url('<%= cl_image_path booking.bike.photos.first.key, height: 300, crop: :fill %>')"></div>
+                  <div class="card-product-infos">
+                        <p><%= "Total Days: #{((booking.end_date - booking.start_date).to_i)+1}" %></p>
+                        <p><%= "Total Cost: £#{booking.bike.price * (((booking.end_date - booking.start_date).to_i)+1) }" %></p>
+                        <%= link_to "",
+                        booking_path(booking),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class: "fa-regular fa-trash-can" %>
+                  </div>
+                </div>
+           <% else %>
+              <div class="card-product">
+                  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)"></div>
+                <div class="card-product-infos">
+                <p><%= "Number of days: #{((booking.end_date - booking.start_date).to_i)+1}" %></p>
+                  <p><%= "Price: #{booking.bike.price * (((booking.end_date - booking.start_date).to_i)+1) }" %></p>
+                  <%= link_to "Delete #{booking.bike.name}",
+                  booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+         <% end %>
       </div>
     </div>
 
   <div class="container pt-3">
-    <h3>Your Bikes:</h3>
+    <h3 class="text-black">Your Bikes:</h3>
     <hr>
     <div class="row">
       <% @bikes.each do |bike| %>
         <div class="col-md-4 mb-3">
-          <%= link_to bike_path(bike), class:"text-decoration-none" do %>
-            <% if bike.photos.attached? %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bike.photos.first.key, height: 300, crop: :fill %>')">
-                <%= bike.name %>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  <%= link_to bike_path(bike), class:"text-decoration-none" do %>
+                      <% if bike.photos.attached? %>
+                        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bike.photos.first.key, height: 300, crop: :fill %>')">
+                          <%= bike.name %>
+                        </div>
+                      <% else %>
+                        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)">
+                          <%= bike.name %>
+                        </div>
+                      <% end %>
+                  <% end%>
               </div>
-            <% else %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)">
-                <%= bike.name %>
+              <div class="flip-card-back">
+                <%= bike.bookings.count %>
               </div>
-            <% end %>
-          <% end%>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
+</div>
