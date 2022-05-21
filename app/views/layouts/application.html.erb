@@ -13,11 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%= render 'shared/navbar' %>
     <div class="pt-5"></div>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <div class="mt-auto">
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
