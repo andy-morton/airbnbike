@@ -12,7 +12,7 @@
                   <div class="card-product-infos">
                         <p><%= "Total Days: #{((booking.end_date - booking.start_date).to_i)+1}" %></p>
                         <p><%= "Total Cost: £#{booking.bike.price * (((booking.end_date - booking.start_date).to_i)+1) }" %></p>
-                        <p><%= "#{booking.start_date} - #{booking.end_date}" %></p>
+                        <p><%= "#{booking.start_date} -> #{booking.end_date}" %></p>
                         <% location = Geocoder.search(booking.bike.location).first.suburb ? Geocoder.search(booking.bike.location).first.suburb : Geocoder.search(booking.bike.location).first.city %>
                         <p><%= "Pick up in #{location}" %></p>
                         <%= link_to "",
