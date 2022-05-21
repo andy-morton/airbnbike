@@ -4,9 +4,15 @@
 }
 
 .map {
-  height: 100vh;
+  height: 120%;
   position: sticky;
   top: 0;
   padding-left: 8px;
-  width: 50%;
+  flex-grow: 1;
+}
+
+.row {
+  padding: 0;
+  flex-basis: 0;
+  flex-grow: 2;
 }

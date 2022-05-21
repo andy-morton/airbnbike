@@ -1,8 +1,7 @@
 .cards {
-  display: grid;
+  // display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  flex-grow: 1;
 }
 
 // Smallest device
@@ -56,13 +55,6 @@ body {
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
-  padding: 1rem;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
 }
 
 .btn {
@@ -141,6 +133,11 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  overflow: visible;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  line-height: 1em; /* a */
+  max-height: 2em; /* a x number of line to show (ex : 2 line)  */
 }
 
 .card__price {
@@ -162,6 +159,9 @@ img {
   overflow: hidden;
   position: relative;
   transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
   &::before {
     content: "";
 	  display: block;
