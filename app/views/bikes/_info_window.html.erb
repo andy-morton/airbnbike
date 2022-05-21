@@ -1,0 +1,11 @@
+<% if bike.photos.attached? %>
+  <div class="info__image" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path bike.photos.first.key, height: 300, crop: :fill %>')"></div>
+<% else %>
+  <div class="info__image" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80)"></div>
+<% end %>
+<%= link_to bike.name, bike_path(bike), target: "_blank", class: "info__link" %>
+<div class="info__list" >
+  <p> <%= bike.category %> </p>
+  <p> <%= bike.size %> </p>
+  <p> <%= "£#{bike.price.to_i} per day" %> </p>
+</div>

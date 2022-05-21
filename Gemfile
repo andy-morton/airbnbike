@@ -73,3 +73,6 @@ gem 'nokogiri'
 # to hide env and add cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+
+# for map support
+gem 'geocoder'
