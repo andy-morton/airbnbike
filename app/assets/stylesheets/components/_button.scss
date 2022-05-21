@@ -2,13 +2,13 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: lightblue;
+  background: $primary-color;
   transition: background 0.3s ease;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #72cde4;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
