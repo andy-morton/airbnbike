@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <% @bike.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-        <%= cl_image_tag photo.key, style: 'row stretch-24 lnr-m-t-0 lnr-m-t-md-6' %>
+        <div class="carousel__image" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path photo.key, height: 300, crop: :fill %>')"></div>
       </div>
     <% end %>
   </div>
