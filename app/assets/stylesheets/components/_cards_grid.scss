@@ -97,6 +97,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 300px;
+  border: 1px;
+  border-style: solid;
+  border-color: $primary-color;
   &:hover {
     .card__image {
       filter: contrast(100%);
@@ -180,6 +183,8 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  overflow: visible;
 }
 
 .card__text {
